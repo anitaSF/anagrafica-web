@@ -1,0 +1,92 @@
+---
+const projects = [
+  {
+    title: "Tu Freelancer de confianza",
+    tags: "Brand Identity / UI Design / React App",
+    slug: "tu-freelancer",
+    img: "/projects/tu-freelancer-confianza.jpg",
+    cardClass: "md:col-span-2 md:row-span-2 aspect-square",
+    hoverBg: "rgba(14, 118, 117, 0.9)" 
+  },
+  {
+    title: "Gold&Roses",
+    tags: "Branding / UI Design / Custom WordPress",
+    slug: "gold-and-roses",
+    img: "/projects/gold-roses.jpg",
+    cardClass: "md:col-span-1 md:row-span-1 aspect-square",
+    hoverBg: "rgba(196, 103, 103, 0.9)" 
+  },
+  {
+    title: "My Tech Blog",
+    tags: "UI Design / Frontend Dev / Angular",
+    slug: "my-tech-blog",
+    img: "/projects/my-tech-blog.jpg",
+    cardClass: "md:col-span-1 md:row-span-1 aspect-square",
+    hoverBg: "rgba(15, 23, 42, 0.9)" 
+  },
+  {
+    title: "MH Chocolate",
+    tags: "Branding / UI Design / Custom WordPress",
+    slug: "mh-chocolate",
+    img: "/projects/mh-chocolate.jpg",
+    cardClass: "md:col-span-1 md:row-span-1 aspect-square",
+    hoverBg: "rgba(242, 182, 60, 0.9)" 
+  },
+  {
+    title: "Weekly Menu",
+    tags: "UI Design / Product Strategy / React App",
+    slug: "weekly-menu",
+    img: "/projects/weekly-menu.jpg",
+    cardClass: "md:col-span-2 md:row-span-1 aspect-[2/1]", 
+    hoverBg: "rgba(15, 23, 42, 0.9)" 
+  }
+];
+---
+
+<section id="projects" class="w-full max-w-[1620px] mx-auto px-6 lg:px-16 pt-12 pb-24">
+  <h2 class="text-[clamp(0.75rem,1.1vw,0.9rem)] font-light uppercase tracking-[0.3em] text-slate-400 mb-10 font-medium">Selected Work</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {projects.map((project) => (
+      /* Cambiado rounded-xl por rounded-3xl para que pruebes un redondeado más pronunciado */
+      <div class={`group relative overflow-hidden bg-slate-50 rounded-3xl border border-slate-100 transition-all duration-500 hover:shadow-xl ${project.cardClass}`}>
+        
+        <img 
+          src={project.img} 
+          alt={project.title} 
+          class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-103"
+        />
+
+        <div 
+          style={`background-color: ${project.hoverBg};`}
+          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-between p-8 z-10 backdrop-blur-[1px] cursor-pointer"
+        >
+          
+          <span class="text-sm uppercase tracking-[0.15em] font-semibold text-slate-200/90">
+            {project.tags}
+          </span>
+          
+          <div class="flex items-end justify-between gap-4">
+            <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+              <h3 class="text-4xl font-light tracking-tight text-white mb-1">
+                {project.title}
+              </h3>
+            </div>
+            
+            <a 
+              href={`/projects/${project.slug}`} 
+              class="w-12 h-12 rounded-full bg-white/20 hover:bg-white text-white hover:text-slate-900 flex items-center justify-center transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shrink-0"
+              aria-label={`View project ${project.title}`}
+            >
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

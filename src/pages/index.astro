@@ -1,17 +1,91 @@
 ---
-
+import BentoGrid from '../components/BentoGrid.astro';
+const email = "anagrafica.grafica@gmail.com";
+const tlf = "+34 649 29 61 96";
+const githubUrl = "https://github.com/anitaSF";
+const linkedinUrl = "https://linkedin.com/in/anagrafica";
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Anagrafica | Digital Designer & Frontend Developer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
+		
+		<nav class="absolute top-0 right-0 p-10 z-50">
+			<button class="flex flex-col gap-2 p-2 group">
+				<div class="w-10 h-0.5 bg-slate-950 transition-all group-hover:w-6"></div>
+				<div class="w-10 h-0.5 bg-slate-950"></div>
+			</button>
+		</nav>
+
+		<section class="relative flex flex-col items-start justify-start pt-16 md:pt-24 pb-16 px-6 lg:px-16 font-sans">
+			
+			<div class="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-[1fr,1.3fr] gap-x-16 items-center">
+				
+				<div class="w-full flex justify-center md:justify-end order-2 md:order-1 mt-8 md:mt-0">
+					<img 
+						src="/anagrafica-ilustracion.jpg" 
+						alt="Ana Santos" 
+						class="w-full max-w-[600px] h-auto object-contain"
+					/>
+				</div>
+				
+				<div class="w-full order-1 md:order-2 md:pt-10">
+					
+					<p class="text-[clamp(2rem,1.3vw,3rem)] font-semibold tracking-[0.05em] mb-8 text-slate-900 leading-relaxed">
+						Hi, I’m <span class="text-brand-coral font-extrabold tracking-tight">Ana</span>!
+					</p>
+					
+					<h1 class="text-[clamp(2rem,5.5vw,4rem)] font-extralight leading-[0.9] tracking-tighter mb-6 text-slate-950">
+						Digital designer 
+					<span class="text-[clamp(3.5rem,7vw,6rem)] font-medium text-brand-coral align-middle mx-1 inline-block transform -translate-y-1">&</span> <br />
+						front-end developer
+					</h1>
+					
+					<p class="text-[clamp(0.75rem,1.1vw,0.9rem)] font-light uppercase tracking-[0.3em] text-slate-400 mb-16 leading-relaxed">
+						creating beautiful, accessible, and intuitive digital experiences
+					</p>
+
+					<div class="flex flex-wrap gap-x-10 gap-y-6 text-slate-700 font-light text-sm border-t border-slate-100 pt-10 items-center">
+						
+						<a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{email}</a>
+
+						<a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4 tracking-widest">{tlf}</a>
+						
+						<div class="flex gap-4 items-center pl-2">
+							<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
+								<svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+								</svg>
+							</a>
+							
+							<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="GitHub">
+								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+								</svg>
+							</a>
+						</div>
+						
+						<div class="ml-auto pt-2 sm:pt-0">
+							<a href="#proyectos" class="group flex items-center gap-2 font-normal text-slate-950 text-xs uppercase tracking-widest">
+								Conoce más sobre mí
+								<span class="inline-block transition-transform group-hover:translate-x-1.5 text-brand-coral">→</span>
+							</a>
+						</div>
+						
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<BentoGrid />
 	</body>
 </html>
