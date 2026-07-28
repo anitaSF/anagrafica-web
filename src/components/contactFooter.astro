@@ -1,62 +1,79 @@
----
-const email = "anagrafica.grafica@gmail.com";
-const tlf = "+34 649 29 61 96";
-const linkedinUrl = "https://linkedin.com/in/anagrafica";
-const githubUrl = "https://github.com/anitaSF";
-
-// Cambia a 'bg-[#C46767]' si prefieres el rosa empolvado
-const circleColorClass = "bg-[#0E7675]"; 
----
-
-<footer id="contact" class="w-full max-w-[1500px] mx-auto px-6 lg:px-16 pt-32 pb-12 font-sans overflow-hidden">
-  <div class="relative grid grid-cols-1 md:grid-cols-[1.2fr,1fr] items-center gap-12 border-b border-slate-100 pb-24 mb-12">
+<footer class="relative flex flex-col items-start justify-start pt-16 md:pt-24 pb-16 px-6 lg:px-16 font-sans overflow-hidden">
+  
+  <div class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 lg:gap-32 items-end relative z-10">
     
-    <div class="relative z-10">
-      <div class="relative inline-block mb-8">
-        <div class={`absolute -top-12 -left-12 w-32 h-32 md:w-40 md:h-40 rounded-full ${circleColorClass} opacity-95 mix-blend-multiply md:mix-blend-normal z-0`}></div>
+    <!-- Columna Izquierda: Círculo + Titular -->
+    <div class="md:col-span-7 relative flex items-end justify-end min-h-[350px] sm:min-h-[450px]">
+      
+      <!-- Círculo Cromático Grande desplazado hacia la izquierda/arriba -->
+      <div class="absolute -left-0 -top-10 sm:-top-16 w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] rounded-full bg-[#e55a54] pointer-events-none"></div>
+
+      <!-- Titular alineado a la derecha sobre la parte inferior/derecha del círculo -->
+      <h2 class="relative z-10 font-extralight text-6xl sm:text-7xl md:text-8xl tracking-tight text-slate-900 leading-none text-right pr-2 sm:pr-6">
+        ¿Hablamos?_
+      </h2>
+
+    </div>
+
+    <!-- Columna Derecha: Texto -->
+    <div class="md:col-span-5 text-slate-700 text-sm sm:text-base leading-relaxed space-y-6 pt-2">
+      
+      <p class="text-slate-800 font-light text-sm">
+        Siempre con ganas de involucrarme en nuevos proyectos y retos donde aportar un valor extra, si buscan a una persona dinámica, detallista, organizada, a la que le apasiona su trabajo y la colaboración en equipo, has encontrado a la persona idónea.
+      </p>
+
+      <p class="text-slate-600 font-light text-sm">
+        Puedes escribirme directamente a 
+        <a href="mailto:anagrafica.grafica@gmail.com" class="font-semibold text-slate-900 hover:text-[#e55a54] underline decoration-2 underline-offset-2 transition-colors">anagrafica.grafica@gmail.com</a> 
+        o llamarme al 
+        <a href="tel:+34649296196" class="font-semibold text-slate-900 hover:text-[#e55a54] underline decoration-2 underline-offset-2 transition-colors">+34 649 296 196</a>.
+      </p>
+
+      <!-- Bloque de Redes e Iconos sutiles sin fondo -->
+      <div class="pt-4 flex flex-wrap items-center gap-6">
         
-        <h2 class="relative z-10 text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter leading-[1.05] text-slate-950">
-          ¿Hablamos? <br />Conectemos_
-        </h2>
+        <!-- LinkedIn -->
+        <a 
+          href="https://linkedin.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="text-slate-800 hover:text-[#e55a54] transition-colors duration-200"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+
+        <!-- GitHub -->
+        <a 
+          href="https://github.com/anitaSF" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="text-slate-800 hover:text-[#e55a54] transition-colors duration-200"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        </a>
+
+        <!-- Enlace texto Descargar CV -->
+        <a 
+          href="/cv-ana-santos.pdf" 
+          target="_blank"
+          class="inline-flex items-center gap-2 font-medium text-slate-800 hover:text-[#e55a54] transition-colors duration-200"
+        >
+          <svg class="w-5 h-5 text-slate-800 hover:text-[#e55a54]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          <span>Descargar CV</span>
+        </a>
+
       </div>
 
-      <p class="text-base md:text-lg font-light text-slate-600 leading-relaxed max-w-xl">
-        Si buscas un perfil híbrido que fusione la dirección de arte y la sensibilidad visual con un desarrollo front-end sólido (Angular, React, WordPress), hablemos. Te invito a <a href="/about" class="text-slate-950 font-normal underline decoration-brand-coral/40 hover:decoration-brand-coral underline-offset-4 transition-colors">conocer más sobre mi trayectoria</a>, o si lo tienes claro, ponte en contacto conmigo directamente para conocernos mejor.
-      </p>
     </div>
 
-    <div class="flex md:justify-end items-center">
-      <a 
-        href={`mailto:${email}`}
-        class="group flex items-center gap-4 text-slate-950 hover:text-brand-coral transition-colors duration-300"
-      >
-        <span class="text-xl md:text-2xl font-light tracking-tight underline decoration-slate-200 underline-offset-8 group-hover:decoration-brand-coral transition-all">
-         Empezar una conversación
-        </span>
-        <div class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-brand-coral group-hover:bg-brand-coral group-hover:text-white transition-all duration-300">
-          <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-          </svg>
-        </div>
-      </a>
-    </div>
   </div>
 
-  <div class="flex flex-wrap gap-x-10 gap-y-6 text-slate-500 font-light text-sm items-center">
-    <a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors underline decoration-slate-200 underline-offset-4">{email}</a>
-    <a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors underline decoration-slate-200 underline-offset-4 tracking-wider">{tlf}</a>
-    
-    <div class="flex gap-5 items-center pl-2">
-      <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-950 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
-      </a>
-      <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-950 hover:text-brand-coral transition-colors" aria-label="GitHub">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-      </a>
-    </div>
-
-    <div class="ml-auto text-xs text-slate-400 uppercase tracking-widest">
-      © {new Date().getFullYear()} — Designed & Coded by Ana
-    </div>
+  <!-- Pie de página inferior -->
+  <div class="w-full max-w-[1500px] mx-auto mt-20 pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+    <div>&copy; {new Date().getFullYear()} Ana Santos — Digital Designer & Front-End Developer</div>
+    <div>Diseñado y maquetado con Astro & Tailwind CSS</div>
   </div>
+
 </footer>
