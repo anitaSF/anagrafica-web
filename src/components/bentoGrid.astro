@@ -3,7 +3,7 @@ const projects = [
   {
     title: "Tu Freelancer de confianza",
     tags: "Brand Identity / UI Design / React App",
-    slug: "tu-freelancer",
+    externalUrl: "https://anitasf.github.io/TuFreelancerDeConfianza/",
     img: "/projects/tu-freelancer-confianza.jpg",
     cardClass: "md:col-span-2 md:row-span-2 aspect-square",
     hoverBg: "rgba(14, 118, 117, 0.9)" 
@@ -11,7 +11,7 @@ const projects = [
   {
     title: "Gold&Roses",
     tags: "Branding / UI Design / Custom WordPress",
-    slug: "gold-and-roses",
+    externalUrl: "https://goldandroses.com/",
     img: "/projects/gold-roses.jpg",
     cardClass: "md:col-span-1 md:row-span-1 aspect-square",
     hoverBg: "rgba(196, 103, 103, 0.9)" 
@@ -19,7 +19,7 @@ const projects = [
   {
     title: "My Tech Blog",
     tags: "UI Design / Frontend Dev / Angular",
-    slug: "my-tech-blog",
+    externalUrl: "https://anitasf.github.io/my-tech-blog-angular/",
     img: "/projects/my-tech-blog.jpg",
     cardClass: "md:col-span-1 md:row-span-1 aspect-square",
     hoverBg: "rgba(15, 23, 42, 0.9)" 
@@ -27,7 +27,7 @@ const projects = [
   {
     title: "MH Chocolate",
     tags: "Branding / UI Design / Custom WordPress",
-    slug: "mh-chocolate",
+    externalUrl: "https://mhchocolate.com/",
     img: "/projects/mh-chocolate.jpg",
     cardClass: "md:col-span-1 md:row-span-1 aspect-square",
     hoverBg: "rgba(242, 182, 60, 0.9)" 
@@ -35,7 +35,7 @@ const projects = [
   {
     title: "Weekly Menu",
     tags: "UI Design / Product Strategy / React App",
-    slug: "weekly-menu",
+    externalUrl: "https://anitasf.github.io/weekelyMenu_react/",
     img: "/projects/weekly-menu.jpg",
     cardClass: "md:col-span-2 md:row-span-1 aspect-[2/1]", 
     hoverBg: "rgba(15, 23, 42, 0.9)" 
@@ -44,23 +44,26 @@ const projects = [
 ---
 
 <section id="projects" class="w-full max-w-[1620px] mx-auto px-6 lg:px-16 pt-12 pb-24">
-  <h2 class="text-[clamp(0.75rem,1.1vw,0.9rem)] font-regular uppercase tracking-[0.275em] text-slate-400 mb-10 font-medium">Proyectos Destacados_</h2>
+  <h2 class="text-[clamp(0.75rem,1.1vw,0.9rem)] uppercase tracking-[0.275em] text-slate-400 mb-10 font-medium">Proyectos Destacados_</h2>
   
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {projects.map((project) => (
-      <div class={`group relative overflow-hidden bg-slate-50 rounded-3xl border border-slate-100 transition-all duration-500 hover:shadow-xl ${project.cardClass}`}>
-        
+      <a 
+        href={project.externalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`group relative overflow-hidden bg-slate-50 rounded-3xl border border-slate-100 transition-all duration-500 hover:shadow-xl block ${project.cardClass}`}
+      >
         <img 
           src={project.img} 
           alt={project.title} 
-          class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-103"
+          class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         />
 
         <div 
           style={`background-color: ${project.hoverBg};`}
-          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-between p-8 z-10 backdrop-blur-[1px] cursor-pointer"
+          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-between p-8 z-10 backdrop-blur-[1px]"
         >
-          
           <span class="text-sm uppercase tracking-[0.15em] font-semibold text-slate-200/90">
             {project.tags}
           </span>
@@ -72,20 +75,16 @@ const projects = [
               </h3>
             </div>
             
-            <a 
-              href={`/projects/${project.slug}`} 
-              class="w-12 h-12 rounded-full bg-white/20 hover:bg-white text-white hover:text-slate-900 flex items-center justify-center transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shrink-0"
-              aria-label={`View project ${project.title}`}
-            >
+            <div class="w-12 h-12 rounded-full bg-white/20 group-hover:bg-white text-white group-hover:text-slate-900 flex items-center justify-center transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg>
-            </a>
+            </div>
           </div>
-          
         </div>
-      </div>
+      </a>
     ))}
   </div>
 </section>

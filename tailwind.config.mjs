@@ -5,7 +5,7 @@ export default {
         extend: {
             colors: {
                 'brand-coral': '#e55a54',
-                'brand-turquoise': '#068caa',
+                'brand-turquoise': '#007d8e',
                 'brand-yellow': '#f1b82d',
                 'apple-gray': '#f5f5f7',
             },
