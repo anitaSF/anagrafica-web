@@ -1,0 +1,222 @@
+---
+const email = "anagrafica.grafica@gmail.com";
+const tlf = "+34 649 29 61 96";
+const githubUrl = "https://github.com/anitaSF";
+const linkedinUrl = "https://linkedin.com/in/anagrafica";
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sobre mí | Anagrafica</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
+		
+		<!-- HEADER / NAV -->
+		<nav class="absolute top-0 right-0 p-8 sm:p-10 z-50 flex items-center gap-6 sm:gap-8">
+			<!-- Selector de idioma -->
+			<div class="flex items-center gap-2 text-xs uppercase tracking-widest font-medium">
+				<span class="text-slate-950 font-bold border-b border-slate-950 pb-0.5">ES</span>
+				<span class="text-slate-300">/</span>
+				<a href="/en/about" class="text-slate-400 hover:text-brand-coral transition-colors">EN</a>
+			</div>
+
+			<!-- Menú Hamburguesa -->
+			<button class="w-10 h-8 flex items-center justify-end group shrink-0" aria-label="Abrir menú">
+				<svg class="w-10 h-6 text-slate-950 group-hover:text-brand-coral transition-colors duration-300" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+					<line x1="12" y1="4" x2="38" y2="4" class="transition-all duration-300 group-hover:translate-x-1" />
+					<line x1="2" y1="12" x2="38" y2="12" class="transition-all duration-300 group-hover:-translate-x-1" />
+					<line x1="20" y1="20" x2="38" y2="20" class="transition-all duration-300 group-hover:translate-x-1" />
+				</svg>
+			</button>
+		</nav>
+
+		<!-- HERO / SOBRE MÍ -->
+		<section class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-end relative z-10">
+      <!-- Columna Izquierda: Círculo + Titular -->
+      <div class="md:col-span-6 relative flex items-end justify-end min-h-[500px] sm:min-h-[600px]">
+        <!-- Círculo  -->
+        <div class="absolute -left-0 w-[320px] h-[320px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#007d8e] pointer-events-none"></div>
+        <!-- Titular -->
+        <h2 class="relative z-10 font-extralight text-6xl md:text-7xl min-[1580px]:text-[5.75rem] tracking-tighter text-slate-900 leading-none text-right pr-2 sm:pr-6 mb-[100px]">Sobre mí_</h2>
+      </div>
+
+      <!-- Columna Derecha: Texto -->
+      <div class="md:col-span-6 text-slate-700 text-sm sm:text-base leading-relaxed space-y-6 pt-2 mb-[40px]">
+        <p class="text-[clamp(1.25rem,1.3vw,2rem)] font-semibold mb-8 text-slate-900 leading-relaxed">
+          Hola, soy <span class="text-brand-coral font-extrabold tracking-tight">Ana</span>
+        </p>
+        <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75]">
+          Licenciada en Bellas Artes por la Universidad de Granada, y artista por naturaleza. Amante de los colores, las formas, los trazos, y en definitiva, de todo estímulo visual, decidí que el Diseño y la Creatividad serían, no solo mi forma de vida, sino mi vida.
+        </p>
+        <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75]">
+          Reconvertida como diseñadora digital y desarrolladora web, creo espacios digitales donde el diseño y la creatividad se fusionan con un código limpio y una lógica intuitiva.
+        </p>
+
+        <!-- Bloque de Redes -->
+        <div class="pt-4 flex flex-wrap items-center gap-6">
+          <a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{email}</a>
+
+						<a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{tlf}</a>
+						
+						<div class="flex gap-4 items-center pl-2">
+							<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
+								<svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+								</svg>
+							</a>
+							
+							<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="GitHub">
+								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+								</svg>
+							</a>
+						</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN EXPERIENCIA -->
+    <section class="max-w-[1000px] mx-auto px-6 py-16 md:py-32 font-sans">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24 items-start">
+        <!-- Columna Izquierda: Título de Sección -->
+        <div class="md:col-span-4 lg:col-span-3">
+          <h3 class="text-3xl md:text-4xl font-extralight tracking-tight text-slate-950">
+            Experiencia_
+          </h3>
+        </div>
+        <!-- Columna Derecha: Timeline -->
+        <div class="md:col-span-8 lg:col-span-9 relative space-y-5">
+          <!-- LÍNEA VERTICAL CONTINUA -->
+          <div class="hidden sm:block absolute left-[140px] md:left-[184px] top-7 bottom-3 w-[2px] bg-[#e55a54] transform -translate-x-1/2"></div>
+          <!-- ITEM 1 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-6 md:gap-10 items-start pb-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2025 – 2026</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-2">Globant</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[24px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Front-End Developer
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo Front-End de aplicación para sector sanitario con Angular:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Proyecto con entorno de desarrollo integrado Eclipse. Control de versiones Git.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Softwares: Eclipse, VisualStudio, Filezilla, Docker, Source Tree, DBeaver, Figma.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ITEM 2 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-6 md:gap-10 items-start py-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2025 – 2026</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-2">Globant</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[24px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Front-End Developer
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo Front-End de aplicación para sector sanitario con Angular:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Proyecto con entorno de desarrollo integrado Eclipse. Control de versiones Git.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Softwares: Eclipse, VisualStudio, Filezilla, Docker, Source Tree, DBeaver, Figma.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ITEM 3 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-6 md:gap-10 items-start py-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2025 – 2026</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-2">Globant</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[24px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Front-End Developer
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo Front-End de aplicación para sector sanitario con Angular:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Proyecto con entorno de desarrollo integrado Eclipse. Control de versiones Git.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Softwares: Eclipse, VisualStudio, Filezilla, Docker, Source Tree, DBeaver, Figma.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ITEM 2 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-6 md:gap-10 items-start py-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2025 – 2026</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-2">Globant</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[24px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Front-End Developer
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo Front-End de aplicación para sector sanitario con Angular:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Proyecto con entorno de desarrollo integrado Eclipse. Control de versiones Git.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Softwares: Eclipse, VisualStudio, Filezilla, Docker, Source Tree, DBeaver, Figma.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+	</body>
+</html>
