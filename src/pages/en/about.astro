@@ -1,172 +1,452 @@
-<main class="max-w-6xl mx-auto px-6 py-12 text-slate-800">
+---
+import Navbar from '@/components/NavbarEN.astro';
+const email = "anagrafica.grafica@gmail.com";
+const tlf = "+34 649 29 61 96";
+const githubUrl = "https://github.com/anitaSF";
+const linkedinUrl = "https://linkedin.com/in/anagrafica";
+---
 
-  <!-- HERO / PRESENTACIÓN -->
-  <header class="flex flex-col md:flex-row items-center gap-12 mb-20">
-    <!-- Círculo gráfico -->
-    <div class="w-64 h-64 md:w-72 md:h-72 rounded-full bg-[#388096] flex items-center justify-center shrink-0 shadow-lg">
-      <h1 class="text-white text-3xl font-light tracking-wide">Sobre mí_</h1>
-    </div>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sobre mí | Anagrafica</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
+		
+		<!-- HEADER / NAV -->
+		<Navbar />
 
-    <!-- Texto Bio -->
-    <div class="flex-1 space-y-4">
-      <h2 class="text-2xl md:text-3xl font-normal">Hola, soy <span class="text-[#e76f51] font-medium">Ana_</span></h2>
-      <p class="text-slate-600 leading-relaxed font-light">
-        Licenciada en Bellas Artes por la Universidad de Granada, y artista por naturaleza. Amante de los colores, las formas, los trazos, y en definitiva, de todo estímulo visual, decidí que el Diseño y la Creatividad serían, no solo mi forma de vida, sino mi vida.
-      </p>
-      <p class="text-slate-600 leading-relaxed font-light">
-        Reconvertida como diseñadora digital y desarrolladora web, creo espacios digitales donde el diseño y la creatividad se meclan con un código limpio y una lógica intuitiva.
-      </p>
+		<!-- HERO / SOBRE MÍ -->
+		<section class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-14 sm:gap-20 items-end relative z-10">
+      <!-- Columna Izquierda: Círculo + Titular -->
+      <div class="md:col-span-6 mr-10 sm:mr-0 relative flex items-end justify-end min-h-[400px] sm:min-h-[650px]">
+        <!-- Círculo  -->
+        <div class="absolute left-0 sm:left-6 w-[320px] h-[320px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#f1b82d] pointer-events-none"></div>
+        <!-- Titular -->
+        <h2 class="relative z-10 font-extralight text-6xl md:text-7xl min-[1580px]:text-[5.75rem] tracking-tighter text-slate-900 leading-none text-right sm:pr-6 mb-[100px]">About me_</h2>
+      </div>
+
+      <!-- Columna Derecha: Texto -->
+      <div class="md:col-span-6 text-slate-700 text-sm sm:text-base leading-relaxed space-y-2 sm:space-y-6 pt-2 mx-6 sm:mx-0 mb-[40px]">
+        <p class="text-[clamp(1.25rem,1.3vw,2rem)] font-semibold mb-4 sm:mb-8 text-slate-900 leading-relaxed">
+          Hi, I´m <span class="text-brand-coral font-extrabold tracking-tight">Ana</span>
+        </p>
+        <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75]">
+          Licenciada en Bellas Artes por la Universidad de Granada, y artista por naturaleza. Amante de los colores, las formas, los trazos, y en definitiva, de todo estímulo visual, decidí que el Diseño y la Creatividad serían, no solo mi forma de vida, sino mi vida.
+        </p>
+        <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75]">
+          Reconvertida como diseñadora digital y desarrolladora web, creo espacios digitales donde el diseño y la creatividad se fusionan con un código limpio y una lógica intuitiva.
+        </p>
+
+        <!-- Bloque de Redes -->
+        <div class="pt-4 flex flex-wrap items-center gap-6">
+          <a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{email}</a>
+
+						<a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{tlf}</a>
+						
+						<div class="flex gap-4 items-center pl-2">
+							<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
+								<svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+								</svg>
+							</a>
+							
+							<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="GitHub">
+								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+								</svg>
+							</a>
+						</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN EXPERIENCIA -->
+    <section class="max-w-[1000px] mx-auto px-6 py-10 md:py-32 font-sans">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24 items-start">
+        <!-- Columna Izquierda: Título de Sección -->
+        <div class="md:col-span-4 lg:col-span-3">
+          <h3 class="text-3xl md:text-4xl font-extralight tracking-tight text-slate-950">
+            Experiencia_
+          </h3>
+        </div>
+        <!-- Columna Derecha: Timeline -->
+        <div class="md:col-span-8 lg:col-span-9 relative space-y-2 sm:space-y-5">
+          <!-- LÍNEA VERTICAL CONTINUA -->
+          <div class="hidden sm:block absolute left-[140px] md:left-[186px] top-7 bottom-3 w-[2px] bg-[#007d8e] transform -translate-x-1/2"></div>
+          <!-- ITEM 1 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-4 md:gap-10 items-start pb-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2025 – 2026</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-1 sm:pt-2">Globant</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[22px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Front-End Developer
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo Front-End de aplicación para sector sanitario con Angular:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Proyecto con entorno de desarrollo integrado Eclipse. Control de versiones Git.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Softwares: Eclipse, VisualStudio, Filezilla, Docker, Source Tree, DBeaver, Figma.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ITEM 2 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-4 md:gap-10 items-start py-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2024 – 2025</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-1 sm:pt-2">Factor Ideas</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[22px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Front-End Developer
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo de proyectos web y app:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Frameworks: Angular, React, Vue | Lenguajes: HTML5, SCSS, JavaScript, TypeScript.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Softwares: Figma, VisualStudio, Filezilla, Docker, Photoshop, PhpMyAdmin.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Creación de sitios web y ecommerce con Wordpress.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Maquetación newsletters HTML5 | QA test (Litmus).</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ITEM 3 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-4 md:gap-10 items-start py-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2020 – 2024</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-1 sm:pt-2">Zona Kamaleón Freelancer</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[22px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Creativa y Diseñadora Digital
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Desarrollo de proyectos a nivel profesional como cofundadora:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Búsqueda y captación de clientes con proyectos para la optimización y digitalización de su negocio | Contacto directo y diario durante su desarrollo.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Diseño y creación de piezas digitales | Programación HTML & CSS de displays | Creación de sitios web y ecommerce con Wordpress, Woocommerce y Shopify.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Branding | Creación de Identidad Visual | Estrategia de marca</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Montaje y edición de videos | Motion Graphics</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ITEM 4 -->
+          <div class="relative grid grid-cols-1 sm:grid-cols-[140px,1fr] md:grid-cols-[160px,1fr] gap-4 md:gap-10 items-start py-3">
+            <!-- Fechas y Empresa -->
+            <div class="space-y-1 text-left sm:text-right sm:pr-6 relative z-10 pt-1">
+              <p class="font-semibold text-lg text-slate-950 leading-tight">2016 – 2019</p>
+              <p class="text-sm text-slate-400 font-medium tracking-wide pt-1 sm:pt-2">Shackleton</p>
+            </div>
+            <!-- Puesto y Detalles -->
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-[#f1b82d] sm:border-l-0">
+              <!-- Puntito exacto sobre la línea -->
+              <div class="absolute -left-[9px] sm:-left-[33px] md:-left-[22px] top-1.5 w-4 h-4 rounded-full bg-[#f1b82d] border-2 border-white shadow-sm z-20"></div>
+              <h4 class="text-xl md:text-2xl text-slate-950 font-semibold">
+                Supervisora y Diseñadora Estudio Digital
+              </h4>
+              <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75] pt-2 pb-2">
+                Coordinación del equipo Estudio Digital. Diseño y producción de piezas:
+              </p>
+              <ul class="space-y-2 text-slate-600 text-sm font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Organización de tareas | Supervisión del trabajo | Apoyo técnico y personal al equipo | Dailys equipo | Reuniones y coordinación con el resto de equipos.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#007d8e] text-xs mt-1.5">•</span>
+                  <span>Diseño y creación de piezas digitales: displays, newsletter, landingpages, websites, app, creatividades y videos para RRSS.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-2xl mx-auto text-center flex flex-col items-center mt-6">
+				<div class="mb-6 text-brand-yellow animate-bounce">
+					<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+					</svg>
+				</div>
+				<!-- Botón a Cargo Collective -->
+				<a href="/CV-AnaSantos-ES.pdf" download="CV-AnaSantos-ES.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-coral transition-all hover:scale-105 shadow-sm">Descargar CV <span class="text-sm">→</span></a>
+			</div>
+    </section>
+
+    <!-- SECCIÓN FORMACIÓN, CONOCIMIENTOS Y APTITUDES -->
+    <section class="max-w-[1500px] mx-auto px-6 font-sans space-y-20 mt-10 sm:mt-0">
       
-      <!-- Enlaces de contacto -->
-      <div class="flex flex-wrap items-center gap-6 pt-4 text-xs md:text-sm text-slate-700 font-medium">
-        <a href="mailto:anagrafica.grafica@gmail.com" class="hover:text-[#388096] transition-colors">anagrafica.grafica@gmail.com</a>
-        <a href="tel:+34649296196" class="hover:text-[#388096] transition-colors">+34 649 29 61 96</a>
-        <a href="#" target="_blank" rel="noreferrer" class="hover:text-[#388096] transition-colors">LinkedIn</a>
-        <a href="#" target="_blank" rel="noreferrer" class="hover:text-[#388096] transition-colors">GitHub</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- EXPERIENCIA -->
-  <section class="flex flex-col md:flex-row gap-8 mb-16">
-    <div class="md:w-1/4 shrink-0">
-      <h3 class="text-xl font-medium tracking-tight">Experiencia_</h3>
-    </div>
-    
-    <div class="md:w-3/4 bg-slate-50/70 p-6 md:p-8 rounded-xl space-y-8">
-      <!-- Item Experiencia 1 -->
-      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
-        <div class="sm:w-36 shrink-0 text-xs text-slate-500 space-y-1">
-          <p class="font-serif italic text-sm text-slate-700">2023 – 2025</p>
-          <p class="font-medium">Studio Forma People</p>
-          <p>Remote</p>
-        </div>
-        <div class="space-y-2">
-          <h4 class="font-serif italic font-medium text-lg text-slate-900">Senior Front-End Developer</h4>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            At Studio Forma, I lead front-end development for a variety of fast-paced client projects, focusing on performance, accessibility, and scalable design systems.
-          </p>
-          <ul class="list-disc list-inside text-xs text-slate-600 space-y-1 pt-1">
-            <li>Designed and developed websites for SaaS startups, agencies, and creatives.</li>
-            <li>Specialized in performant, accessible layouts using Astro, React, and Tailwind.</li>
-            <li>Created custom design systems and component libraries for long-term scalability.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Item Experiencia 2 -->
-      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 pt-4 border-t border-slate-200/60">
-        <div class="sm:w-36 shrink-0 text-xs text-slate-500 space-y-1">
-          <p class="font-serif italic text-sm text-slate-700">2021 – 2023</p>
-          <p class="font-medium">Glowhaus Creative</p>
-          <p>New York, US</p>
-        </div>
-        <div class="space-y-2">
-          <h4 class="font-serif italic font-medium text-lg text-slate-900">UI Designer & Webflow Developer</h4>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            As part of the design team at Glowhaus, I worked closely with branding and strategy teams to bring visually rich, responsive websites to life.
-          </p>
-          <ul class="list-disc list-inside text-xs text-slate-600 space-y-1 pt-1">
-            <li>Led UI design for 15+ brand websites and marketing campaigns.</li>
-            <li>Developed responsive layouts in Webflow with custom interactions.</li>
-            <li>Collaborated closely with branding teams to elevate visual identity.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMACIÓN Y CONOCIMIENTOS TÉCNICOS -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-    
-    <!-- Formación -->
-    <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium tracking-tight">Formación_</h3>
-      <div class="bg-slate-50/70 p-6 rounded-xl space-y-4 text-xs">
-        <div>
-          <p class="font-medium text-slate-800 text-sm">Licenciatura en BBAA</p>
-          <p class="text-slate-500">Universidad de Granada · Oct 2005 – Jul 2010</p>
-        </div>
-        <div>
-          <p class="font-medium text-slate-800 text-sm">Máster Restauración Conservación BBCC</p>
-          <p class="text-slate-500">UPV · Oct 2010 – Jul 2012</p>
-        </div>
-        <div>
-          <p class="font-medium text-slate-800 text-sm">Máster Diseño Publicitario</p>
-          <p class="text-slate-500">TRAZOS · Oct 2013 – Jul 2014</p>
-        </div>
-        <div>
-          <p class="font-medium text-slate-800 text-sm">Bootcamp Desarrollo Front-end</p>
-          <p class="text-slate-500">Upgrade Hub · Feb – Jul 2024</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Conocimientos técnicos -->
-    <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium tracking-tight">Conocimientos técnicos_</h3>
-      <div class="bg-slate-50/70 p-6 rounded-xl space-y-3 text-xs">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
         
-        <!-- Fila de Skill (Ejemplo Ps) -->
-        <div class="flex items-center justify-between">
-          <span class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center font-bold text-slate-700">Ps</span>
-          <div class="flex gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+        <!-- ================= COLUMNA IZQUIERDA (Formación + Aptitudes) ================= -->
+        <div class="space-y-16">
+          
+          <!-- SUB-BLOQUE: Formación -->
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
+            <div class="sm:col-span-5 pb-4 sm:pb-0">
+              <h3 class="text-3xl md:text-4xl font-extralight tracking-tight text-slate-950">
+                Formación_
+              </h3>
+            </div>
+
+            <div class="sm:col-span-7 space-y-5">
+              <!-- Licenciatura BBAA -->
+              <div class="border-b border-slate-100 pb-2.5">
+                <h4 class="text-base font-normal text-slate-950">Licenciatura en BBAA</h4>
+                <div class="flex justify-between items-center text-xs text-slate-400 font-light mt-0.5">
+                  <span>Universidad de Granada</span>
+                  <span>Oct 2005 – Jul 2010</span>
+                </div>
+              </div>
+
+              <!-- Máster Restauración -->
+              <div class="border-b border-slate-100 pb-2.5">
+                <h4 class="text-base font-normal text-slate-950">Máster Restauración Conservación BBCC</h4>
+                <div class="flex justify-between items-center text-xs text-slate-400 font-light mt-0.5">
+                  <span>UPV</span>
+                  <span>Oct 2010 – Jul 2012</span>
+                </div>
+              </div>
+
+              <!-- Máster Diseño -->
+              <div class="border-b border-slate-100 pb-2.5">
+                <h4 class="text-base font-normal text-slate-950">Máster Diseño Publicitario</h4>
+                <div class="flex justify-between items-center text-xs text-slate-400 font-light mt-0.5">
+                  <span>TRAZOS</span>
+                  <span>Oct 2013 – Jul 2014</span>
+                </div>
+              </div>
+
+              <!-- Bootcamp -->
+              <div class="border-b border-slate-100 pb-2.5">
+                <h4 class="text-base font-normal text-slate-950">Bootcamp Desarrollo Front-end</h4>
+                <div class="flex justify-between items-center text-xs text-slate-400 font-light mt-0.5">
+                  <span>Upgrade Hub</span>
+                  <span>Feb – Jul 2024</span>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- SUB-BLOQUE: Aptitudes profesionales -->
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start pb-6">
+            <div class="sm:col-span-5">
+              <h3 class="text-3xl md:text-4xl pb-4 sm:pb-0 font-extralight tracking-tight text-slate-950 leading-relaxed">
+                Aptitudes profesionales_
+              </h3>
+            </div>
+
+            <div class="sm:col-span-7">
+              <p class="text-slate-600 text-sm font-light leading-relaxed">
+                Creatividad <span class="text-[#f1b82d] mx-1">|</span> 
+                Criterio visual <span class="text-[#f1b82d] mx-1">|</span> 
+                Proactividad <span class="text-[#f1b82d] mx-1">|</span> 
+                UI/UX <span class="text-[#f1b82d] mx-1">|</span> 
+                Atención al detalle <span class="text-[#f1b82d] mx-1">|</span> 
+                Colaboración <span class="text-[#f1b82d] mx-1">|</span> 
+                Comunicación <span class="text-[#f1b82d] mx-1">|</span> 
+                Efectividad <span class="text-[#f1b82d] mx-1">|</span> 
+                Resolución de problemas <span class="text-[#f1b82d] mx-1">|</span> 
+                Adaptabilidad
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Fila de Skill (Ejemplo WordPress) -->
-        <div class="flex items-center justify-between">
-          <span class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center font-bold text-slate-700">Wp</span>
-          <div class="flex gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
+        <!-- ================= COLUMNA DERECHA (Conocimientos técnicos) ================= -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6 items-start sm:ml-6">
+          <div class="sm:col-span-5">
+            <h3 class="text-3xl md:text-4xl pb-4 sm:pb-0 font-extralight tracking-tight text-slate-950 leading-relaxed">
+              Conocimientos técnicos_
+            </h3>
           </div>
-        </div>
 
-        <!-- Fila de Skill (Ejemplo React) -->
-        <div class="flex items-center justify-between">
-          <span class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center font-bold text-slate-700">Re</span>
-          <div class="flex gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#388096]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+          <div class="sm:col-span-7 space-y-3.5">
+            <!-- BLOQUE DISEÑO -->
+            <!-- Photoshop (10) -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 flex justify-start shrink-0">
+                <img src="/icons/psd-icon.svg" alt="Photoshop" class="w-7 h-7 object-contain" />
+              </div>
+              <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+
+            <!-- Illustrator (10) -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 flex justify-start shrink-0">
+                <img src="/icons/illustrator-icon.svg" alt="Illustrator" class="w-7 h-7 object-contain" />
+              </div>
+              <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+
+            <!-- InDesign (10) -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 flex justify-start shrink-0">
+                <img src="/icons/indesign-icon.svg" alt="InDesign" class="w-7 h-7 object-contain" />
+              </div>
+              <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+
+            <!-- After Effects (10) -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 flex justify-start shrink-0">
+                <img src="/icons/aftereffects-icon.svg" alt="After Effects" class="w-7 h-7 object-contain" />
+              </div>
+              <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+
+            <!-- Figma (10) -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 flex justify-start shrink-0">
+                <img src="/icons/figma-icon.svg" alt="Figma" class="w-7 h-7 object-contain" />
+              </div>
+              <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+
+            <!-- Firefly / Midjourney (10) -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 flex items-center gap-1.5 shrink-0">
+                <img src="/icons/firefly-cion.svg" alt="Firefly" class="w-6 h-6 object-contain" />
+                <img src="/icons/midjourney-icon.svg" alt="Midjourney" class="w-6 h-6 object-contain" />
+              </div>
+              <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+
+            <!-- ESPACIO MAYOR ENTRE DISEÑO Y DESARROLLO -->
+            <div class="pt-4 space-y-3.5">
+              <!-- WordPress + Elementor (10) -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 flex items-center gap-1.5 shrink-0">
+                  <img src="/icons/wp-icon.svg" alt="WordPress" class="w-6 h-6 object-contain" />
+                  <img src="/icons/elementor-icon.svg" alt="Elementor" class="w-6 h-6 object-contain" />
+                </div>
+                <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                  <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+                </div>
+              </div>
+
+              <!-- HTML5 + CSS3 (10) -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 flex items-center gap-1.5 shrink-0">
+                  <img src="/icons/html5-icon.svg" alt="HTML5" class="w-6 h-6 object-contain" />
+                  <img src="/icons/css3-icon.svg" alt="CSS3" class="w-6 h-6 object-contain" />
+                </div>
+                <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                  <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+                </div>
+              </div>
+
+              <!-- Tailwind + Bootstrap (10) -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 flex items-center gap-1.5 shrink-0">
+                  <img src="/icons/tailwild-icon.svg" alt="Tailwind CSS" class="w-6 h-6 object-contain" />
+                  <img src="/icons/bootstrap-icon.svg" alt="Bootstrap" class="w-6 h-6 object-contain" />
+                </div>
+                <div class="flex gap-2 text-[#f1b82d] text-[10px]">
+                  <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+                </div>
+              </div>
+
+              <!-- Angular + React (7) -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 flex items-center gap-1.5 shrink-0">
+                  <img src="/icons/angular-icon.svg" alt="Angular" class="w-6 h-6 object-contain" />
+                  <img src="/icons/react-icon.svg" alt="React" class="w-6 h-6 object-contain" />
+                </div>
+                <div class="flex gap-2 text-xs">
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-[#f1b82d] text-[10px]">●</span>
+                  <span class="text-slate-200 text-[10px]">●</span>
+                  <span class="text-slate-200 text-[10px]">●</span>
+                  <span class="text-slate-200 text-[10px]">●</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
       </div>
+
+    </section>
+
+    <!-- Pie de página -->
+    <div class="w-full max-w-[1500px] mx-auto mt-20 pt-6 pb-16 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+      <div>&copy; {new Date().getFullYear()} Anagrafica — Digital Designer & Front-End Developer</div>
+      <div>Diseñado y maquetado por Anagrafica</div>
     </div>
 
-  </section>
-
-  <!-- APTITUDES PROFESIONALES -->
-  <section class="flex flex-col md:flex-row gap-8">
-    <div class="md:w-1/4 shrink-0">
-      <h3 class="text-xl font-medium tracking-tight">Aptitudes profesionales_</h3>
-    </div>
-    <div class="md:w-3/4">
-      <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
-        Creatividad <span class="text-slate-300 mx-1">|</span> Criterio visual <span class="text-slate-300 mx-1">|</span> Proactividad <span class="text-slate-300 mx-1">|</span> UI/UX <span class="text-slate-300 mx-1">|</span> Atención al detalle <span class="text-slate-300 mx-1">|</span> Colaboración <span class="text-slate-300 mx-1">|</span> Comunicación <span class="text-slate-300 mx-1">|</span> Flexibilidad <span class="text-slate-300 mx-1">|</span> Resolución de problemas <span class="text-slate-300 mx-1">|</span> Adaptabilidad
-      </p>
-    </div>
-  </section>
-
-</main>
+	</body>
+</html>
