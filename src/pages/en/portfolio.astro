@@ -1,0 +1,97 @@
+---
+import Navbar from '@/components/NavbarEn.astro';
+import BentoGrid from '@/components/bentoGridEn.astro';
+const email = "anagrafica.grafica@gmail.com";
+const tlf = "+34 649 29 61 96";
+const githubUrl = "https://github.com/anitaSF";
+const linkedinUrl = "https://linkedin.com/in/anagrafica";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio | Anagrafica</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
+		
+		<!-- HEADER / NAV -->
+		<Navbar esUrl="/portfolio" />
+
+		<!-- HERO / PORTFOLIO -->
+		<section class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-14 sm:gap-20 md:mb-20 items-end relative z-10">
+        <!-- Columna Izquierda: Círculo + Titular -->
+        <div class="md:col-span-6 mr-10 sm:mr-0 relative flex items-end justify-end min-h-[400px] sm:min-h-[630px]">
+            <!-- Círculo  -->
+            <div class="absolute left-0 sm:left-6 w-[320px] h-[320px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#f1b82d] pointer-events-none"></div>
+            <!-- Titular -->
+            <h2 class="relative z-10 font-extralight text-6xl md:text-7xl min-[1580px]:text-[5.75rem] tracking-tighter text-slate-900 leading-none text-right sm:pr-6 mb-[100px]">Portfolio_</h2>
+        </div>
+
+        <!-- Columna Derecha: Texto -->
+        <div class="md:col-span-6 text-slate-700 text-sm sm:text-base leading-relaxed space-y-2 sm:space-y-6 pt-2 mx-6 sm:mx-0 mb-[40px]">
+            <p class="text-[clamp(1.25rem,1.3vw,2rem)] font-semibold mb-4 sm:mb-8 text-slate-900 leading-[1.5]">
+            <span class="text-brand-coral font-extrabold tracking-tight">Diseño</span> lo que se ve. <br /><span class="text-brand-turquoise font-extrabold tracking-tight">Desarrollo</span> lo que funciona.
+            </p>
+            <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75]">
+            Una selección de proyectos digitales creados desde la creatividad, detalle visual, la experiencia de usuario y un desarrollo técnico sólido.
+            </p>
+            <p class="text-slate-600 text-sm sm:text-base font-light leading-[1.75]">
+            ¿Buscas dar vida a un proyecto o sumar talento a tu equipo? Estoy abierta a proyectos independientes y a nuevas oportunidades profesionales. ¿Hablamos?
+            </p>
+
+            <!-- Bloque de Redes -->
+            <div class="pt-4 flex flex-wrap items-center gap-6">
+            <a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{email}</a>
+
+                            <a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{tlf}</a>
+                            
+                            <div class="flex gap-4 items-center pl-2">
+                                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
+                                    <svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                                    </svg>
+                                </a>
+                                
+                                <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="GitHub">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+	<BentoGrid />
+
+	<!-- WIP -->
+	<section class="max-w-[1500px] mx-auto w-full px-6 lg:px-16 mb-20 md:mb-0">
+		<div class="max-w-2xl mx-auto text-center flex flex-col items-center">
+        	<div class="mb-6 text-brand-yellow animate-bounce">
+				<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+				</svg>
+			</div>
+			<p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-10 max-w-xxl font-light">
+				Feel free to check out my previous work on Cargo Collective.
+			</p>
+
+			<!-- Botón a Cargo Collective -->
+			<a href="https://cargocollective.com/anagrafica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-coral transition-all hover:scale-105 shadow-sm">Explore Cargo Collective <span class="text-sm">→</span></a>
+		</div>
+	</section>
+
+    <!-- Pie de página -->
+    <div class="w-full max-w-[1500px] mx-auto mt-20 pt-6 pb-16 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+      <div>&copy; {new Date().getFullYear()} Anagrafica — Digital Designer & Front-End Developer</div>
+      <div>Diseñado y maquetado por Anagrafica</div>
+    </div>
+
+	</body>
+</html>
