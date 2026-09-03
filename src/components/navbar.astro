@@ -1,9 +1,18 @@
-<!-- 1. BARRA SUPERIOR (Selector idioma + Botón hamburguesa) -->
+---
+// src/components/Navbar.astro
+interface Props {
+  enUrl?: string;
+}
+
+const { enUrl = "/en" } = Astro.props;
+---
+
+<!-- 1. BARRA SUPERIOR -->
 <nav class="absolute top-0 right-0 p-8 sm:p-10 z-50 flex items-center gap-6 sm:gap-8">
   <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-medium">
     <span class="text-slate-950 font-bold border-b border-slate-950 pb-0.5">ES</span>
     <span class="text-slate-300">/</span>
-    <a href="/en" class="text-slate-400 hover:text-brand-coral transition-colors">EN</a>
+    <a href={enUrl} class="text-slate-400 hover:text-brand-coral transition-colors">EN</a>
   </div>
 
   <button 
@@ -51,12 +60,10 @@
 
     if (!toggleBtn || !overlay) return;
 
-    // Listener directo
     toggleBtn.onclick = () => {
       const isOpen = overlay.classList.contains('opacity-100');
       
       if (isOpen) {
-        // Cierre
         overlay.classList.remove('opacity-100', 'pointer-events-auto');
         overlay.classList.add('opacity-0', 'pointer-events-none');
         document.body.style.overflow = '';
@@ -67,7 +74,6 @@
           (item as HTMLElement).style.transitionDelay = '0ms';
         });
       } else {
-        // Apertura
         overlay.classList.remove('opacity-0', 'pointer-events-none');
         overlay.classList.add('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = 'hidden';
@@ -81,7 +87,6 @@
     };
   }
 
-  // Ejecución directa en carga e hidratación
   setupMenuES();
   document.addEventListener('astro:page-load', setupMenuES);
 </script>
