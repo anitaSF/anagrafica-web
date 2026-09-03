@@ -1,17 +1,11 @@
----
-// src/components/NavbarES.astro
----
-
-<!-- BARRA SUPERIOR -->
+<!-- 1. BARRA SUPERIOR (Selector idioma + Botón hamburguesa) -->
 <nav class="absolute top-0 right-0 p-8 sm:p-10 z-50 flex items-center gap-6 sm:gap-8">
-  <!-- Selector de idioma EN -->
   <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-medium">
-    <a href="/" class="text-slate-400 hover:text-brand-coral transition-colors">ES</a>
+    <span class="text-slate-950 font-bold border-b border-slate-950 pb-0.5">ES</span>
     <span class="text-slate-300">/</span>
-    <span class="text-slate-950 font-bold border-b border-slate-950 pb-0.5">EN</span>
+    <a href="/en" class="text-slate-400 hover:text-brand-coral transition-colors">EN</a>
   </div>
 
-  <!-- Botón Hamburguesa -->
   <button 
     id="menu-toggle-es" 
     class="w-10 h-8 flex items-center justify-end group shrink-0 z-50 focus:outline-none cursor-pointer" 
@@ -25,25 +19,25 @@
   </button>
 </nav>
 
-<!-- MENÚ DESPLEGABLE CON TRANSICIÓN TIPO MILO -->
+<!-- 2. MENÚ DESPLEGABLE OVERLAY -->
 <div 
   id="menu-overlay-es" 
   class="fixed inset-0 bg-white/95 backdrop-blur-md z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]"
 >
-  <ul class="text-center space-y-8 font-sans">
+  <ul class="text-center space-y-20 font-sans">
     <li class="menu-item-anim opacity-0 translate-y-6 transition-all duration-500 ease-out">
-      <a href="/en" class="block text-3xl md:text-5xl font-extralight text-slate-950 hover:text-brand-coral transition-colors">
-        Home_
+      <a href="/" class="block text-3xl md:text-5xl font-extralight text-slate-950 hover:text-brand-coral transition-colors">
+        Home
       </a>
     </li>
     <li class="menu-item-anim opacity-0 translate-y-6 transition-all duration-500 ease-out">
-      <a href="/en/portfolio" class="block text-3xl md:text-5xl font-extralight text-slate-950 hover:text-brand-coral transition-colors">
-        Portfolio_
+      <a href="/portfolio" class="block text-3xl md:text-5xl font-extralight text-slate-950 hover:text-brand-coral transition-colors">
+        Portfolio
       </a>
     </li>
     <li class="menu-item-anim opacity-0 translate-y-6 transition-all duration-500 ease-out">
-      <a href="/en/about" class="block text-3xl md:text-5xl font-extralight text-slate-950 hover:text-brand-coral transition-colors">
-        About me_
+      <a href="/about" class="block text-3xl md:text-5xl font-extralight text-slate-950 hover:text-brand-coral transition-colors">
+        About
       </a>
     </li>
   </ul>
@@ -51,13 +45,14 @@
 
 <script>
   function setupMenuES() {
-    const toggleBtn = document.getElementById('menu-toggle-en');
-    const overlay = document.getElementById('menu-overlay-en');
+    const toggleBtn = document.getElementById('menu-toggle-es');
+    const overlay = document.getElementById('menu-overlay-es');
     const menuItems = document.querySelectorAll('#menu-overlay-es .menu-item-anim');
 
     if (!toggleBtn || !overlay) return;
 
-    toggleBtn.addEventListener('click', () => {
+    // Listener directo
+    toggleBtn.onclick = () => {
       const isOpen = overlay.classList.contains('opacity-100');
       
       if (isOpen) {
@@ -66,7 +61,6 @@
         overlay.classList.add('opacity-0', 'pointer-events-none');
         document.body.style.overflow = '';
 
-        // Reseteamos las animaciones de los links
         menuItems.forEach((item) => {
           item.classList.remove('opacity-100', 'translate-y-0');
           item.classList.add('opacity-0', 'translate-y-6');
@@ -78,17 +72,16 @@
         overlay.classList.add('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = 'hidden';
 
-        // Animación de entrada escalonada (stagger) para los enlaces
         menuItems.forEach((item, index) => {
-          // Aplicamos un retraso progresivo a cada elemento (150ms, 250ms, 350ms...)
           (item as HTMLElement).style.transitionDelay = `${150 + index * 100}ms`;
           item.classList.remove('opacity-0', 'translate-y-6');
           item.classList.add('opacity-100', 'translate-y-0');
         });
       }
-    });
+    };
   }
 
+  // Ejecución directa en carga e hidratación
   setupMenuES();
   document.addEventListener('astro:page-load', setupMenuES);
 </script>
