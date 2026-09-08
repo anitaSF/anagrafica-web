@@ -1,190 +1,91 @@
 ---
-import Navbar from '@/components/Navbar.astro';
-import BentoGrid from '@/components/bentoGrid.astro';
-import ContactFooter from '@/components/contactFooter.astro';
+import MainLayout from '@/layouts/MainLayout.astro';
+import BentoGrid from '@/components/BentoGrid.astro';
+
 const email = "anagrafica.grafica@gmail.com";
 const tlf = "+34 649 29 61 96";
 const githubUrl = "https://github.com/anitaSF";
 const linkedinUrl = "https://linkedin.com/in/anagrafica";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Anagrafica | Digital Designer & Frontend Developer</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
-
-		<!-- ESTILOS ANIMACIÓN -->
-		<style is:global>
-			.reveal-fade-up {
-				opacity: 0;
-				transform: translateY(28px);
-				transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-				will-change: opacity, transform;
-			}
-
-			.reveal-from-left {
-				opacity: 0;
-				transform: translateX(-40px);
-				transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-				will-change: opacity, transform;
-			}
-
-			.reveal-from-right {
-				opacity: 0;
-				transform: translateX(40px);
-				transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-				will-change: opacity, transform;
-			}
-
-			.reveal-zoom {
-				opacity: 0;
-				transform: scale(0.96) translateY(24px);
-				transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-				will-change: opacity, transform;
-			}
-
-			.reveal-hero-img {
-				opacity: 0;
-				transform: scale(0.94) translateY(30px);
-				transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-				will-change: opacity, transform;
-			}
-
-			/* Estado visible al hacer scroll / cargar */
-			.reveal-fade-up.is-visible,
-			.reveal-from-left.is-visible,
-			.reveal-from-right.is-visible,
-			.reveal-zoom.is-visible,
-			.reveal-hero-img.is-visible {
-				opacity: 1;
-				transform: translate(0) scale(1);
-			}
-
-			/* Delays para el efecto escalonado */
-			.delay-100 { transition-delay: 100ms; }
-			.delay-200 { transition-delay: 200ms; }
-			.delay-300 { transition-delay: 300ms; }
-			.delay-400 { transition-delay: 400ms; }
-			.delay-500 { transition-delay: 500ms; }
-		</style>
-	</head>
-	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
+<MainLayout title="Anagrafica | Digital Designer & Frontend Developer" enUrl="/en" lang="es">
+	
+	<!-- HERO -->
+	<section class="relative flex flex-col items-start justify-start pt-24 pb-16 px-6 lg:px-16 font-sans">
 		
-		<!-- HEADER -->
-		<Navbar enUrl="/en"/>
-
-		<!-- HERO -->
-		<section class="relative flex flex-col items-start justify-start pt-24 pb-16 px-6 lg:px-16 font-sans">
+		<div class="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-[1fr,1.3fr] gap-x-16 items-center">
 			
-			<div class="max-w-[1500px] mx-auto w-full grid grid-cols-1 md:grid-cols-[1fr,1.3fr] gap-x-16 items-center">
-				
-				<div class="w-full flex justify-center md:justify-start order-2 md:order-1 mt-16 md:mt-0 reveal-zoom delay-100">
-					<img 
-						src="/anagrafica-ilustracion.jpg" 
-						alt="Ana Santos" 
-						class="w-full max-w-[620px] h-auto object-contain"
-					/>
-				</div>
-				
-				<div class="w-full order-1 md:order-2 md:pt-10 md:pl-6">
-					
-					<p class="text-[clamp(2rem,1.3vw,3rem)] font-semibold mb-8 text-slate-900 leading-relaxed reveal-from-left">
-						Hola, soy <span class="text-brand-coral font-extrabold tracking-tight">Ana</span>_
-					</p>
-					
-					<h1 class="text-6xl md:text-7xl min-[1580px]:text-[5.75rem] font-extralight leading-[0.9] tracking-tighter mb-6 text-slate-900 reveal-fade-up delay-100">
-						Digital designer 
-						<span class="text-[clamp(3.5rem,7vw,6rem)] font-medium text-brand-coral align-middle mx-1 inline-block transform -translate-y-1">&</span> <br />
-						front-end developer
-					</h1>
-					
-					<p class="text-[clamp(0.75rem,1.1vw,0.94rem)] font-regular uppercase tracking-[0.275em] text-slate-400 pt-4 sm:pt-0 mb-10 sm:mb-16 leading-relaxed reveal-fade-up delay-200">
-						diseño espacios digitales creativos, accesibles e intuitivos
-					</p>
-
-					<div class="flex flex-wrap gap-x-10 gap-y-6 font-light text-slate-600 text-sm sm:text-base border-t border-slate-100 pt-10 items-center reveal-fade-up delay-300">
-						
-						<a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{email}</a>
-
-						<a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{tlf}</a>
-						
-						<div class="flex gap-4 items-center pl-2">
-							<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
-								<svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor">
-									<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-								</svg>
-							</a>
-							
-							<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="GitHub">
-								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-								</svg>
-							</a>
-						</div>
-						
-						<div class="ml-auto pt-2 sm:pt-0">
-							<a href="/about" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-coral transition-all hover:scale-105 shadow-sm">Saber más sobre mí <span class="text-sm">→</span></a>
-						</div>
-						
-					</div>
-
-				</div>
+			<div class="w-full flex justify-center md:justify-start order-2 md:order-1 mt-16 md:mt-0 reveal-zoom delay-100">
+				<img 
+					src="/anagrafica-ilustracion.jpg" 
+					alt="Ana Santos" 
+					class="w-full max-w-[620px] h-auto object-contain"
+				/>
 			</div>
-		</section>
-
-		<!-- PROJECTS -->
-		<BentoGrid />
-
-		<!-- WIP / CARGO COLLECTIVE -->
-		<section class="max-w-[1500px] mx-auto w-full px-6 lg:px-16 mb-20 md:mb-0 reveal-fade-up">
-			<div class="max-w-2xl mx-auto text-center flex flex-col items-center">
-				<div class="mb-6 text-brand-yellow animate-bounce">
-					<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-					</svg>
-				</div>
-				<p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-10 max-w-xxl font-light">
-					Podéis echar un ojo a mis trabajos anteriores en Cargo Collective.
+			
+			<div class="w-full order-1 md:order-2 md:pt-10 md:pl-6">
+				
+				<p class="text-[clamp(2rem,1.3vw,3rem)] font-semibold mb-8 text-slate-900 leading-relaxed reveal-from-left">
+					Hola, soy <span class="text-brand-coral font-extrabold tracking-tight">Ana</span>_
+				</p>
+				
+				<h1 class="text-6xl md:text-7xl min-[1580px]:text-[5.75rem] font-extralight leading-[0.9] tracking-tighter mb-6 text-slate-900 reveal-fade-up delay-100">
+					Digital designer 
+					<span class="text-[clamp(3.5rem,7vw,6rem)] font-medium text-brand-coral align-middle mx-1 inline-block transform -translate-y-1">&</span> <br />
+					front-end developer
+				</h1>
+				
+				<p class="text-[clamp(0.75rem,1.1vw,0.94rem)] font-regular uppercase tracking-[0.275em] text-slate-400 pt-4 sm:pt-0 mb-10 sm:mb-16 leading-relaxed reveal-fade-up delay-200">
+					diseño espacios digitales creativos, accesibles e intuitivos
 				</p>
 
-				<a href="https://cargocollective.com/anagrafica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-coral transition-all hover:scale-105 shadow-sm">Ir a Cargo Collective <span class="text-sm">→</span></a>
+				<div class="flex flex-wrap gap-x-10 gap-y-6 font-light text-slate-600 text-sm sm:text-base border-t border-slate-100 pt-10 items-center reveal-fade-up delay-300">
+					
+					<a href={`mailto:${email}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{email}</a>
+
+					<a href={`tel:${tlf.replace(/\s+/g, '')}`} class="hover:text-brand-coral transition-colors decoration-slate-200 underline-offset-4">{tlf}</a>
+					
+					<div class="flex gap-4 items-center pl-2">
+						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="LinkedIn">
+							<svg class="w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+							</svg>
+						</a>
+						
+						<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-brand-coral transition-colors" aria-label="GitHub">
+							<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+							</svg>
+						</a>
+					</div>
+					
+					<div class="ml-auto pt-2 sm:pt-0">
+						<a href="/about" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-coral transition-all hover:scale-105 shadow-sm">Saber más sobre mí <span class="text-sm">→</span></a>
+					</div>
+					
+				</div>
+
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- FOOTER -->
-		<ContactFooter />
+	<!-- PROJECTS -->
+	<BentoGrid />
 
-		<!-- SCRIPT GLOBAL DEL OBSERVER -->
-		<script>
-			const initObserver = () => {
-				const observerOptions = {
-					root: null,
-					rootMargin: '0px 0px -40px 0px',
-					threshold: 0.1
-				};
+	<!-- WIP / CARGO COLLECTIVE -->
+	<section class="max-w-[1500px] mx-auto w-full px-6 lg:px-16 mb-20 md:mb-0 reveal-fade-up">
+		<div class="max-w-2xl mx-auto text-center flex flex-col items-center">
+			<div class="mb-6 text-brand-yellow animate-bounce">
+				<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+				</svg>
+			</div>
+			<p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-10 max-w-xxl font-light">
+				Podéis echar un ojo a mis trabajos anteriores en Cargo Collective.
+			</p>
 
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('is-visible');
-							observer.unobserve(entry.target);
-						}
-					});
-				}, observerOptions);
+			<a href="https://cargocollective.com/anagrafica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-brand-coral transition-all hover:scale-105 shadow-sm">Ir a Cargo Collective <span class="text-sm">→</span></a>
+		</div>
+	</section>
 
-				const animatedElements = document.querySelectorAll(
-					'.reveal-fade-up, .reveal-from-left, .reveal-from-right, .reveal-zoom'
-				);
-
-				animatedElements.forEach(el => observer.observe(el));
-			};
-
-			document.addEventListener('DOMContentLoaded', initObserver);
-		</script>
-	</body>
-</html>
+</MainLayout>

@@ -1,0 +1,124 @@
+---
+import Navbar from '@/components/Navbar.astro';
+import ContactFooter from '@/components/ContactFooter.astro';
+import NavbarEn from '@/components/NavbarEn.astro';
+import ContactFooterEn from '@/components/ContactFooterEn.astro';
+
+interface Props {
+  title?: string;
+  enUrl?: string;
+  lang?: 'es' | 'en'; // Prop para controlar el idioma
+}
+
+const { 
+  title = "Anagrafica | Digital Designer & Frontend Developer", 
+  enUrl = "/en",
+  lang = "es" 
+} = Astro.props;
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
+
+		<!-- ESTILOS GLOBALES DE ANIMACIÓN -->
+		<style is:global>
+			.reveal-fade-up {
+				opacity: 0;
+				transform: translateY(28px);
+				transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: opacity, transform;
+			}
+
+			.reveal-from-left {
+				opacity: 0;
+				transform: translateX(-40px);
+				transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: opacity, transform;
+			}
+
+			.reveal-from-right {
+				opacity: 0;
+				transform: translateX(40px);
+				transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: opacity, transform;
+			}
+
+			.reveal-zoom {
+				opacity: 0;
+				transform: scale(0.96) translateY(24px);
+				transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: opacity, transform;
+			}
+
+			.reveal-hero-img {
+				opacity: 0;
+				transform: scale(0.94) translateY(30px);
+				transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: opacity, transform;
+			}
+
+			.reveal-fade-up.is-visible,
+			.reveal-from-left.is-visible,
+			.reveal-from-right.is-visible,
+			.reveal-zoom.is-visible,
+			.reveal-hero-img.is-visible {
+				opacity: 1;
+				transform: translate(0) scale(1);
+			}
+
+			.delay-100 { transition-delay: 100ms; }
+			.delay-200 { transition-delay: 200ms; }
+			.delay-300 { transition-delay: 300ms; }
+			.delay-400 { transition-delay: 400ms; }
+			.delay-500 { transition-delay: 500ms; }
+		</style>
+	</head>
+	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
+		
+		<!-- RENDER CONDICIONAL DEL NAVBAR -->
+		{lang === 'en' ? <NavbarEn enUrl={enUrl} /> : <Navbar enUrl={enUrl} />}
+
+		<main>
+			<slot />
+		</main>
+
+		<!-- RENDER CONDICIONAL DEL FOOTER -->
+		{lang === 'en' ? <ContactFooterEn /> : <ContactFooter />}
+
+		<!-- SCRIPT GLOBAL DEL OBSERVER -->
+		<script>
+			const initObserver = () => {
+				const observerOptions = {
+					root: null,
+					rootMargin: '0px 0px -40px 0px',
+					threshold: 0.1
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('is-visible');
+							observer.unobserve(entry.target);
+						}
+					});
+				}, observerOptions);
+
+				const animatedElements = document.querySelectorAll(
+					'.reveal-fade-up, .reveal-from-left, .reveal-from-right, .reveal-zoom'
+				);
+
+				animatedElements.forEach(el => observer.observe(el));
+			};
+
+			document.addEventListener('DOMContentLoaded', initObserver);
+			document.addEventListener('astro:page-load', initObserver);
+		</script>
+	</body>
+</html>
