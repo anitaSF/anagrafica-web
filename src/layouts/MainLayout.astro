@@ -7,12 +7,14 @@ import ContactFooterEn from '@/components/ContactFooterEn.astro';
 interface Props {
   title?: string;
   enUrl?: string;
-  lang?: 'es' | 'en'; // Prop para controlar el idioma
+  esUrl?: string; // 👈 1. Añadimos esUrl a las Props
+  lang?: 'es' | 'en';
 }
 
 const { 
   title = "Anagrafica | Digital Designer & Frontend Developer", 
   enUrl = "/en",
+  esUrl = "/",   // 👈 2. Le damos valor por defecto '/' para volver al español
   lang = "es" 
 } = Astro.props;
 ---
@@ -82,8 +84,11 @@ const {
 	</head>
 	<body class="bg-white font-sans text-slate-950 overflow-x-hidden">
 		
-		<!-- RENDER CONDICIONAL DEL NAVBAR -->
-		{lang === 'en' ? <NavbarEn enUrl={enUrl} /> : <Navbar enUrl={enUrl} />}
+		<!-- RENDER CONDICIONAL DEL NAVBAR (Corregido pasando ambas URLs) -->
+		{lang === 'en' 
+			? <NavbarEn esUrl={esUrl} enUrl={enUrl} /> 
+			: <Navbar enUrl={enUrl} esUrl={esUrl} />
+		}
 
 		<main>
 			<slot />
